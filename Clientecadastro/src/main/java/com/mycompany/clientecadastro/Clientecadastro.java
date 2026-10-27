@@ -11,6 +11,7 @@ package com.mycompany.clientecadastro;
 public class Clientecadastro {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        
     }
 }

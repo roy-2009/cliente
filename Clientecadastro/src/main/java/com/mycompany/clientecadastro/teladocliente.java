@@ -93,8 +93,8 @@ public class teladocliente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPasswordFieldsenha = new javax.swing.JPasswordField();
         jPasswordFieldconfirmacaodesenha = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField1email = new javax.swing.JTextField();
+        jTextFieldusuario = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
@@ -106,6 +106,11 @@ public class teladocliente extends javax.swing.JFrame {
         salvar.setBackground(new java.awt.Color(255, 102, 0));
         salvar.setForeground(new java.awt.Color(255, 255, 255));
         salvar.setText("salvar");
+        salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(15, 61, 58));
 
@@ -146,6 +151,11 @@ public class teladocliente extends javax.swing.JFrame {
         jTextFieldCNPJ.setBackground(new java.awt.Color(255, 102, 0));
 
         jCheckBox1ativo.setText("Ativo");
+        jCheckBox1ativo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ativoActionPerformed(evt);
+            }
+        });
 
         jTextField8inscricaoestatal.setBackground(new java.awt.Color(255, 102, 0));
 
@@ -550,9 +560,9 @@ public class teladocliente extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(15, 61, 58));
 
-        jLabelEmail.setText("usuario");
+        jLabelEmail.setText("email");
 
-        jLabelUsuario.setText("confirmação de usuario");
+        jLabelUsuario.setText(" usuario");
 
         jLabelSenha.setText("senha");
 
@@ -562,14 +572,14 @@ public class teladocliente extends javax.swing.JFrame {
 
         jPasswordFieldconfirmacaodesenha.setBackground(new java.awt.Color(25, 25, 112));
 
-        jTextField1.setBackground(new java.awt.Color(25, 25, 112));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField1email.setBackground(new java.awt.Color(25, 25, 112));
+        jTextField1email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextField1emailActionPerformed(evt);
             }
         });
 
-        jTextField2.setBackground(new java.awt.Color(25, 25, 112));
+        jTextFieldusuario.setBackground(new java.awt.Color(25, 25, 112));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -584,8 +594,8 @@ public class teladocliente extends javax.swing.JFrame {
                     .addComponent(jLabelSenha)
                     .addComponent(jLabelUsuario)
                     .addComponent(jLabelEmail)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2))
+                    .addComponent(jTextField1email)
+                    .addComponent(jTextFieldusuario))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -594,11 +604,11 @@ public class teladocliente extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addComponent(jLabelEmail)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField1email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelUsuario)
                 .addGap(3, 3, 3)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -668,9 +678,57 @@ public class teladocliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCEPActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField1emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextField1emailActionPerformed
+
+    private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
+
+    NewClasscliente cliente = new NewClasscliente(
+    
+    jTextFieldcodigo.getText(),        
+    jTextFieldnome.getText(),
+    jTextFieldcontato.getText(),
+    jCheckBox1ativo.getText(),
+            
+    jTextFieldCPF.getText(),
+    jTextFieldindentidade.getText(),
+    jTextFielddatadenacimento.getText(),
+    jTextFieldCNPJ.getText(),
+    jTextField8inscricaoestatal.getText(),
+
+    jTextFieldendereco.getText(),
+    jTextFieldnumero.getText(),
+    jTextFieldcomplemento.getText(),
+    jTextFieldCEP.getText(),
+    jTextFieldbairro.getText(),
+
+    0, // codigoCidade
+    jComboBoxcidade.getSelectedItem().toString(),
+
+    jRadioButtonmasculino.isSelected() ? "Masculino" : "Feminino",
+
+    jTextFieldfone.getText(),
+    jTextFieldfax.getText(),
+    jTextFieldcelular.getText(),
+    jTextFieldemail.getText(),
+
+    0, // codigoAtividade
+    jComboBoxDiversos.getSelectedItem().toString(),
+    jTextArea1.getText(),
+
+    jTextField1email.getText(),
+    jTextFieldusuario.getText(),
+    new String(jPasswordFieldsenha.getPassword()),
+    new String(jPasswordFieldconfirmacaodesenha.getPassword())
+);
+
+
+    }//GEN-LAST:event_salvarActionPerformed
+
+    private void jCheckBox1ativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ativoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ativoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -755,8 +813,7 @@ public class teladocliente extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonmasculino;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField1email;
     private javax.swing.JTextField jTextField8inscricaoestatal;
     private javax.swing.JTextField jTextFieldCEP;
     private javax.swing.JTextField jTextFieldCNPJ;
@@ -776,6 +833,7 @@ public class teladocliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldindentidade;
     private javax.swing.JTextField jTextFieldnome;
     private javax.swing.JTextField jTextFieldnumero;
+    private javax.swing.JTextField jTextFieldusuario;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton salvar;
     // End of variables declaration//GEN-END:variables
